@@ -18,10 +18,12 @@ class MyTestClass(BaseCase):
             all_jobs = []
 
             # count the links with bash
-            number_links = subprocess.run("cat oman_links.txt | wc -l",shell=True, )
+            res = subprocess.run("cat oman_links.txt | wc -l",shell=True,
+                                          capture_output=True, text=True  )
 
-            
-            for i in range(0,2):
+            links_count = int(res.stdout)      
+            print("links_count: ", links_count)
+            for i in range(0,links_count):
                   # get first link 
                   link = content[i]
                   # open first link

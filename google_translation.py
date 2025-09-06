@@ -12,14 +12,16 @@ class GoogleTranslation(BaseCase):
             self.open("https://translate.google.com/")
 
             # cookie button pass
+            self.wait_for_element_visible("#yDmH0d > c-wiz > div > div > div > div.NIoIEf > div.G4njw > div.AIC7ge > div.CxJub > div.VtwTSb > form:nth-child(2) > div > div > button")
             self.click(selector="#yDmH0d > c-wiz > div > div > div > div.NIoIEf > div.G4njw > div.AIC7ge > div.CxJub > div.VtwTSb > form:nth-child(2) > div > div > button")
 
             # click on button to change language
+            self.wait_for_element_visible("#yDmH0d > c-wiz > div > div.ToWKne > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div:nth-child(1) > c-wiz > div.zXU7Rb > c-wiz > div:nth-child(5) > button")
             self.click(selector="#yDmH0d > c-wiz > div > div.ToWKne > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div:nth-child(1) > c-wiz > div.zXU7Rb > c-wiz > div:nth-child(5) > button")
             try:
                   # if window open , write persian and click ENTER to save
-                  if self.is_element_visible(selector="/html/body/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[1]/c-wiz/div[2]/c-wiz/div[2]/div/div[2]/input"):
-                              self.type(selector="/html/body/c-wiz/div/div[2]/c-wiz/div[2]/c-wiz/div[1]/div[1]/c-wiz/div[2]/c-wiz/div[2]/div/div[2]/input",
+                  if self.is_element_visible(selector="#yDmH0d > c-wiz > div > div.ToWKne > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div:nth-child(1) > c-wiz > div:nth-child(2) > c-wiz > div.ykTHSe > div > div.fMHXgc.qkH7ie > input"):
+                              self.type(selector="#yDmH0d > c-wiz > div > div.ToWKne > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div:nth-child(1) > c-wiz > div:nth-child(2) > c-wiz > div.ykTHSe > div > div.fMHXgc.qkH7ie > input",
                                           text="persian\n")
             except Exception as e:
                   if retries > 0:
@@ -51,7 +53,7 @@ class GoogleTranslation(BaseCase):
                               # write text="untranslated_eng_text" in the eng box to be translate
                               self.write(selector="#yDmH0d > c-wiz > div > div.ToWKne > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div.AxqVh > div.OPPzxe > div > c-wiz > span > span > div > textarea",
                                           text=text_to_translate)
-                              self.sleep(1.5)
+                              self.sleep(2.5)
                         
                         
                         # گرفتن خروجی
