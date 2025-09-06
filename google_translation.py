@@ -9,27 +9,11 @@ class GoogleTranslation(BaseCase):
 
             translated_jobs = []
 
-            self.open("https://translate.google.com/")
+            self.open("https://translate.google.com/?sl=en&tl=fa&op=translate")
 
             # cookie button pass
             self.wait_for_element_visible("#yDmH0d > c-wiz > div > div > div > div.NIoIEf > div.G4njw > div.AIC7ge > div.CxJub > div.VtwTSb > form:nth-child(2) > div > div > button")
             self.click(selector="#yDmH0d > c-wiz > div > div > div > div.NIoIEf > div.G4njw > div.AIC7ge > div.CxJub > div.VtwTSb > form:nth-child(2) > div > div > button")
-
-            # click on button to change language
-            self.wait_for_element_visible("#yDmH0d > c-wiz > div > div.ToWKne > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div:nth-child(1) > c-wiz > div.zXU7Rb > c-wiz > div:nth-child(5) > button")
-            self.click(selector="#yDmH0d > c-wiz > div > div.ToWKne > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div:nth-child(1) > c-wiz > div.zXU7Rb > c-wiz > div:nth-child(5) > button")
-            try:
-                  # if window open , write persian and click ENTER to save
-                  if self.is_element_visible(selector="#yDmH0d > c-wiz > div > div.ToWKne > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div:nth-child(1) > c-wiz > div:nth-child(2) > c-wiz > div.ykTHSe > div > div.fMHXgc.qkH7ie > input"):
-                              self.type(selector="#yDmH0d > c-wiz > div > div.ToWKne > c-wiz > div.OlSOob > c-wiz > div.ccvoYb > div:nth-child(1) > c-wiz > div:nth-child(2) > c-wiz > div.ykTHSe > div > div.fMHXgc.qkH7ie > input",
-                                          text="persian\n")
-            except Exception as e:
-                  if retries > 0:
-                        print("Retrying... remaining attempts:", retries)
-                        self.sleep(1)  # کمی صبر قبل از تلاش دوباره
-                        GoogleTranslation.test_translate_jobs(self, retries=retries-1)
-                  else:
-                        print("Failed to set language after multiple attempts:", e)
 
 
             # ---- . برای هر آگهی ----
