@@ -1,0 +1,15 @@
+google_translation.py::GoogleTranslation::test_translate_jobs
+--------------------------------------------------------------------
+Last Page: chrome://new-tab-page/
+ Duration: 0.26s
+  Browser: Chrome 140.0.7339.80
+   Driver: chromedriver 140.0.7339.80
+Timestamp: 1757148459  (Unix Timestamp)
+     Date: Saturday, 6 September 2025
+     Time: 12:17:39 PM  (+0330, UTC+03:30)
+--------------------------------------------------------------------
+Traceback:
+  File "/home/ali/Desktop/jobs_translate/google_translation.py", line 7, in test_translate_jobs
+    with open("jobs_data.json", "r", encoding="utf-8") as f:
+         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Exception: [Errno 2] No such file or directory: 'jobs_data.json'
